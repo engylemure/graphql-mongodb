@@ -1,0 +1,12 @@
+version: '2'
+services:
+  graphql:
+    build: .
+    network_mode: bridge
+    links: 
+      - mongodb
+    volumes:
+      - ./src/:/src
+  mongodb:
+    image: mongo
+    network_mode: bridge
